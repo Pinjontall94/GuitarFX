@@ -1,0 +1,76 @@
+#N canvas 0 0 1334 658 10;
+#X obj 149 46 adc~;
+#X obj 703 611 hip~ 1;
+#X obj 682 637 dac~;
+#X obj 170 71 hip~ 170;
+#X obj 703 588 *~;
+#X obj 718 425 vsl 15 128 0.01 1.01 1 0 empty empty Gain 0 -9 0 10
+-262144 -1 -1 12700 1;
+#X obj 718 563 - 0.01;
+#X obj 543 264 *~;
+#X obj 558 101 vsl 15 128 0.01 1.01 0 0 empty empty Depth 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 491 361 *~;
+#X obj 548 394 *~;
+#X obj 584 292 * -1;
+#X obj 584 314 + 1;
+#X obj 437 198 ez_lfo~;
+#X obj 411 34 vsl 15 128 0.01 1.01 1 0 empty empty Rate 0 -9 0 10 -262144
+-1 -1 8200 1;
+#X obj 460 123 vradio 15 0 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X text 477 122 sin;
+#X text 477 166 noise;
+#X text 477 152 sqr;
+#X text 477 137 saw;
+#X obj 818 320 rev2~ 100 90 3000 20;
+#X obj 858 126 vsl 15 128 0.01 1.01 1 0 empty empty Mix 0 -9 0 10 -262144
+-1 -1 12700 1;
+#X obj 858 264 - 0.01;
+#X obj 943 94 vsl 15 128 0 100 0 0 empty empty Room\ Size 0 -9 0 10
+-262144 -1 -1 12000 1;
+#X obj 999 140 vsl 15 128 0 100 0 0 empty empty Damping 0 -9 0 10 -262144
+-1 -1 11400 1;
+#X obj 894 342 expr ($f1 * -1) + 1;
+#X obj 880 372 *~;
+#X obj 843 289 *~;
+#X obj 411 172 - 0.01;
+#X obj 748 255 inlet~;
+#X obj 883 414 outlet~;
+#X obj 84 239 tube~;
+#X obj 177 428 lop~ 200;
+#X connect 0 1 3 0;
+#X connect 1 0 2 1;
+#X connect 3 0 31 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 1;
+#X connect 7 0 9 1;
+#X connect 8 0 7 1;
+#X connect 8 0 11 0;
+#X connect 9 0 26 0;
+#X connect 9 0 27 0;
+#X connect 10 0 26 0;
+#X connect 10 0 27 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 1;
+#X connect 13 0 7 0;
+#X connect 14 0 28 0;
+#X connect 15 0 13 1;
+#X connect 20 0 4 0;
+#X connect 20 0 30 0;
+#X connect 21 0 22 0;
+#X connect 22 0 25 0;
+#X connect 22 0 27 1;
+#X connect 23 0 20 2;
+#X connect 24 0 20 4;
+#X connect 25 0 26 1;
+#X connect 26 0 4 0;
+#X connect 26 0 30 0;
+#X connect 27 0 20 0;
+#X connect 28 0 13 0;
+#X connect 29 0 27 0;
+#X connect 29 0 26 0;
+#X connect 31 0 32 0;
+#X connect 32 0 9 0;
+#X connect 32 0 10 0;

@@ -1,0 +1,22 @@
+#N canvas -8 -8 1350 674 10;
+#X obj 649 362 *~ 2000;
+#X obj 649 384 clip~ -0.5 0.5;
+#X obj 649 309 *~;
+#X obj 664 146 vsl 15 128 0.01 1.01 1 0 empty empty Gain 0 -9 0 10
+-262144 -1 -1 7700 1;
+#X obj 664 284 - 0.01;
+#X obj 730 431 *~;
+#X obj 745 268 vsl 15 128 0.01 1.01 1 0 empty empty Vol 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 745 406 - 0.01;
+#X obj 597 259 inlet~;
+#X obj 595 435 outlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 1;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 1;
+#X connect 8 0 2 0;
